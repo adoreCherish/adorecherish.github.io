@@ -3,8 +3,8 @@
   "short_name": "Progressive Times",
   "start_url": "./test.html",
   "display": "standalone",
-  "theme_color": "#FFDF00",
-  "background_color": "#FFDF00",
+  "theme_color": "red",
+  "background_color": "red",
   "icons": [{
       "src": "./images/homescreen.png",
       "sizes": "192x192",
