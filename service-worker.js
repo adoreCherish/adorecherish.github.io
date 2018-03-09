@@ -116,15 +116,18 @@ self.addEventListener('fetch', function (event) {
 //   event.waitUntil(self.registration.showNotification(title, options));
 // });
 
-// self.addEventListener('notificationclick', function(event) {
-//   console.log('[Service Worker] Notification click Received.');
+self.addEventListener('notificationclick', function(event) {
+  // console.log('[Service Worker] Notification click Received.');
 
-//   event.notification.close();
+  // event.notification.close();
 
-//   event.waitUntil(
-//     clients.openWindow('https://developers.google.com/web/')
-//   );
-// });
+  // event.waitUntil(
+  //   clients.openWindow('https://developers.google.com/web/')
+  // );
+  let examplePage = '/new';
+  let promiseChain = clients.openWindow(examplePage);
+  event.waitUntil(promiseChain);
+});
 
 // self.addEventListener('pushsubscriptionchange', function(event) {
 //   console.log('[Service Worker]: \'pushsubscriptionchange\' event fired.');

@@ -102,7 +102,7 @@
                 console.log('User is subscribed.')
                 isSubscribed = true
                 updateBtn()
-                console.log( Notification.prototype)
+                console.log(Notification.prototype)
                 registration.showNotification('Hello World!',{
                   body: '这是一条消息推送~',
                   icon: './images/homescreen.png',
@@ -133,6 +133,9 @@
                   vibrate: [500, 110, 500, 110, 450, 110, 200, 110, 170, 40, 450, 110, 200, 110, 170, 40, 500],
                   // sound: 'path/to/sound.mp3' //浏览器都不支持
                   // timestamp: Date.parse('01 Mar 2018 16:33:00')
+                  onclick: function () {
+                    alert('点击了')
+                  }
                 })
                 return
               }
