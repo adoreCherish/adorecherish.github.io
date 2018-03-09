@@ -124,7 +124,7 @@ self.addEventListener('notificationclick', function(event) {
   // event.waitUntil(
   //   clients.openWindow('https://developers.google.com/web/')
   // );
-  let examplePage = '/new';
+  let examplePage = '/new.html';
   let promiseChain = clients.openWindow(examplePage);
   event.waitUntil(promiseChain);
 });
