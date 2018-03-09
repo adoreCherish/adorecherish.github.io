@@ -128,6 +128,7 @@ self.addEventListener('notificationclick', function(event) {
   // let promiseChain = clients.openWindow(examplePage);
   // event.waitUntil(promiseChain);
   let examplePage = 'index/newHtml'
+  alert(examplePage)
   let urlToOpen = new URL(examplePage, self.location.origin).href;
   console.log(urlToOpen)
   let promiseChain = clients.matchAll({
