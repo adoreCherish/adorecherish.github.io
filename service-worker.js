@@ -124,9 +124,32 @@ self.addEventListener('notificationclick', function(event) {
   // event.waitUntil(
   //   clients.openWindow('https://developers.google.com/web/')
   // );
-  let examplePage = '/new.html';
-  let promiseChain = clients.openWindow(examplePage);
-  event.waitUntil(promiseChain);
+  // let examplePage = '/new.html';
+  // let promiseChain = clients.openWindow(examplePage);
+  // event.waitUntil(promiseChain);
+  let examplePage = 'index/newHtml'
+  let urlToOpen = new URL(examplePage, self.location.origin).href;
+  console.log(urlToOpen)
+  let promiseChain = clients.matchAll({
+    type: 'window',
+    includeUncontrolled: true
+  }).then(windowClients => {
+    let matchingClient = null;
+
+    for (let i = 0, max = windowClients.length; i < max; i++) {
+        let windowClient = windowClients[i];
+        if (windowClient.url === urlToOpen) {
+            matchingClient = windowClient;
+            break;
+        }
+    }
+
+    return matchingClient
+        ? matchingClient.focus()
+        : clients.openWindow(urlToOpen);
+  }).catch(error=>{
+    console.log(error)
+  })
 });
 
 // self.addEventListener('pushsubscriptionchange', function(event) {
