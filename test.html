@@ -115,18 +115,23 @@
                         action: 'doughnut-action',
                         title: 'Doughnut',
                         icon: 'path/to/action-2.png'
-                    },
-                    {
-                        action: 'gramophone-action',
-                        title: 'gramophone',
-                        icon: 'images/homescreen.png'
-                    },
-                    {
-                        action: 'atom-action',
-                        title: 'Atom',
-                        icon: 'path/to/action-4.png'
                     }
-                  ]
+                    // google 只支持2条记录
+                    // {
+                    //     action: 'gramophone-action',
+                    //     title: 'gramophone',
+                    //     icon: 'images/homescreen.png'
+                    // },
+                    // {
+                    //     action: 'atom-action',
+                    //     title: 'Atom',
+                    //     icon: 'path/to/action-4.png'
+                    // }
+                  ],
+                  dir:'ltr',// auto ltr rtl
+                  vibrate: [500, 110, 500, 110, 450, 110, 200, 110, 170, 40, 450, 110, 200, 110, 170, 40, 500],
+                  // sound: 'path/to/sound.mp3' //浏览器都不支持
+                  timestamp: Date.parse('01 Mar 2018 16:33:00')
                 })
                 return
               }
