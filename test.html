@@ -102,7 +102,10 @@
                 console.log('User is subscribed.')
                 isSubscribed = true
                 updateBtn()
-                registration.showNotification('Hello World!')
+                registration.showNotification('Hello World!',{
+                  body: '这是一条消息推送~',
+                  icon: './images/homescreen.png'
+                })
                 return
               }
               // 还没有订阅过，则显示一个提示
