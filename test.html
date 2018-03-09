@@ -104,7 +104,29 @@
                 updateBtn()
                 registration.showNotification('Hello World!',{
                   body: '这是一条消息推送~',
-                  icon: './images/homescreen.png'
+                  icon: './images/homescreen.png',
+                  actions: [
+                    {
+                        action: 'coffee-action',
+                        title: 'Coffee',
+                        icon: 'images/homescreen.png'
+                    },
+                    {
+                        action: 'doughnut-action',
+                        title: 'Doughnut',
+                        icon: 'path/to/action-2.png'
+                    },
+                    {
+                        action: 'gramophone-action',
+                        title: 'gramophone',
+                        icon: 'images/homescreen.png'
+                    },
+                    {
+                        action: 'atom-action',
+                        title: 'Atom',
+                        icon: 'path/to/action-4.png'
+                    }
+                  ]
                 })
                 return
               }
